@@ -8,8 +8,8 @@ import test.platzi.com.raian.com.org.simpleplatzi.model.ResultQueryWalmartProduc
 class IInitialWelcomeFragmentPresenterImpl (var context: Context) : IInitialWelcomeFragmentPresenter{
     private var restInteractor : IRestInteractor = IRestInteractorImpl()
 
-    override fun loadRandomProducts(): ResultQueryWalmartProduct {
-        return restInteractor.getProductsUsingQueryFilter("")
+    override fun loadRandomProducts(): ResultQueryWalmartProduct? {
+        return restInteractor.getProductsUsingQueryFilter("condoms")
     }
 
 }

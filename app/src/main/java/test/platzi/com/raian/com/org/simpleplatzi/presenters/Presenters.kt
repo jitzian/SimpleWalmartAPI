@@ -15,6 +15,6 @@ interface IWelcomePresenter {
 }
 
 interface IInitialWelcomeFragmentPresenter{
-    fun loadRandomProducts() : ResultQueryWalmartProduct
+    fun loadRandomProducts() : ResultQueryWalmartProduct?
 
 }

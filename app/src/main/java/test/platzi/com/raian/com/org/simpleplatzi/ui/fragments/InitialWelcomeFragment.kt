@@ -25,7 +25,7 @@ class InitialWelcomeFragment : Fragment() {
         rootView = inflater?.inflate(R.layout.fragment_initial_welcome, container, false)
 
         presenter = IInitialWelcomeFragmentPresenterImpl(context)
-//        presenter.loadRandomProducts()
+        presenter.loadRandomProducts()
 
         return rootView
     }

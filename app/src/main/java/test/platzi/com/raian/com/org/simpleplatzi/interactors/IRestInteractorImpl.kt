@@ -10,9 +10,9 @@ import test.platzi.com.raian.com.org.simpleplatzi.rest.RestService
 
 class IRestInteractorImpl : IRestInteractor{
     private val TAG = IRestInteractorImpl::class.java.simpleName
-    private lateinit var result : ResultQueryWalmartProduct
+    private var result : ResultQueryWalmartProduct? = null
 
-    override fun getProductsUsingQueryFilter(query: String): ResultQueryWalmartProduct {
+    override fun getProductsUsingQueryFilter(query: String): ResultQueryWalmartProduct? {
 
         val retrofit = RetrofitProvider.getInstance().getRetrofit(GlobalConstants.baseURLWalmart)
         val restService = retrofit.create(RestService::class.java)
