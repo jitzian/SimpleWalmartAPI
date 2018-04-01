@@ -5,6 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
@@ -19,6 +20,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -28,5 +30,6 @@ task clean(type: Delete) {
 
 ext.deps = [
         'retrofitVersionLib'        : '2.3.0',
-        'gsonVersionLib'            : '2.3.0'
+        'gsonVersionLib'            : '2.3.0',
+        'androidVersionSupportLib'  : '26.1.0'
 ]

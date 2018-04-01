@@ -1,15 +1,22 @@
-package test.platzi.com.raian.com.org.simpleplatzi
+package test.platzi.com.raian.com.org.simpleplatzi.ui
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import com.dxtt.coolmenu.CoolMenuFrameLayout
 import kotlinx.android.synthetic.main.activity_welcome.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import test.platzi.com.raian.com.org.simpleplatzi.R
+import test.platzi.com.raian.com.org.simpleplatzi.presenters.IWelcomePresenter
+import test.platzi.com.raian.com.org.simpleplatzi.presenters.IWelcomePresenterImpl
 
-class WelcomeActivity : AppCompatActivity() {
-    val TAG = WelcomeActivity::class.java.simpleName
+class WelcomeActivityTest : AppCompatActivity() {
+
+    val TAG = WelcomeActivityTest::class.java.simpleName
+    private lateinit var coolMenuFrameLayout : CoolMenuFrameLayout
+    private var presenter : IWelcomePresenter = IWelcomePresenterImpl(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +28,13 @@ class WelcomeActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
+        setControls()
+
+    }
+
+    fun setControls(){
+        coolMenuFrameLayout = findViewById(R.id.coolMenuFrameLayout)
+        presenter.setTitlesList(coolMenuFrameLayout)
     }
 
     fun <T> callback(fn: (Throwable?, Response<T>?) -> Unit): Callback<T> {

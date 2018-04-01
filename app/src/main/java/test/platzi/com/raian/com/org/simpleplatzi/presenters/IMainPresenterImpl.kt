@@ -1,6 +1,7 @@
 package test.platzi.com.raian.com.org.simpleplatzi.presenters
 
 import android.content.Context
+import android.content.Intent
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -9,9 +10,11 @@ import test.platzi.com.raian.com.org.simpleplatzi.constants.GlobalConstants
 import test.platzi.com.raian.com.org.simpleplatzi.model.ResultAuthorization
 import test.platzi.com.raian.com.org.simpleplatzi.providers.RetrofitProvider
 import test.platzi.com.raian.com.org.simpleplatzi.rest.RestService
-import test.platzi.com.raian.com.org.simpleplatzi.utility.encodeBase64ToServer
+import test.platzi.com.raian.com.org.simpleplatzi.ui.WelcomeActivity
+import test.platzi.com.raian.com.org.simpleplatzi.ui.utility.encodeBase64ToServer
 
 class IMainPresenterImpl (var context : Context?) : IMainPresenter{
+
     private var TAG = IMainPresenterImpl::class.java.simpleName
     private lateinit var retrofit : Retrofit
     private lateinit var restService: RestService
@@ -47,7 +50,7 @@ class IMainPresenterImpl (var context : Context?) : IMainPresenter{
 
             override fun onResponse(call: Call<ResultAuthorization>?, response: Response<ResultAuthorization>?) {
                 println("Everything worked out: ${response?.message()} : ${response?.body()} : ${response?.code()}")
-
+                redirectToWelcomeActivity()
             }
 
         })
@@ -55,7 +58,8 @@ class IMainPresenterImpl (var context : Context?) : IMainPresenter{
     }
 
     override fun redirectToWelcomeActivity() {
-
+        var intent = Intent(context, WelcomeActivity::class.java)
+        context?.startActivity(intent)
     }
 
 

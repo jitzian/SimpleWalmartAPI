@@ -6,6 +6,7 @@ import test.platzi.com.raian.com.org.simpleplatzi.constants.GlobalConstants
 import java.util.concurrent.Executors
 
 class RetrofitProvider private constructor(){
+
     companion object {
         private val mInstance = RetrofitProvider()
 

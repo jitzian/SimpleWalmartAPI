@@ -1,12 +1,13 @@
-package test.platzi.com.raian.com.org.simpleplatzi
+package test.platzi.com.raian.com.org.simpleplatzi.ui
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.dxtt.coolmenu.CoolMenuFrameLayout
+import test.platzi.com.raian.com.org.simpleplatzi.R
 import test.platzi.com.raian.com.org.simpleplatzi.presenters.IMainPresenter
 import test.platzi.com.raian.com.org.simpleplatzi.presenters.IMainPresenterImpl
 
@@ -40,6 +41,4 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-
-
 }

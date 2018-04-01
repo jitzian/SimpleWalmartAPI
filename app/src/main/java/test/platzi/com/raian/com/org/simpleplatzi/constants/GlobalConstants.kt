@@ -10,7 +10,10 @@ class GlobalConstants{
         const val walmartAPIKey : String = "p9snnve8t8u7u857scdzrbdw"
 
         //http://api.walmartlabs.com/v1/search?apiKey=p9snnve8t8u7u857scdzrbdw&query=chips
-        const val baseURLWalmart : String = "http://api.walmartlabs.com/v1"
+        //const val baseURLWalmart : String = "http://api.walmartlabs.com/v1/search?apiKey=$walmartAPIKey"
+        const val baseURLWalmart : String = "http://api.walmartlabs.com"
+        val mainMenuTitles = listOf("Something 1", "Something 2", "Something 3", "Something 4")
+
 
     }
 }
