@@ -29,7 +29,9 @@ task clean(type: Delete) {
 }
 
 ext.deps = [
+        'androidSupportVersionLib'  : '26.1.0',
         'retrofitVersionLib'        : '2.3.0',
         'gsonVersionLib'            : '2.3.0',
-        'androidVersionSupportLib'  : '26.1.0'
+        'androidVersionSupportLib'  : '26.1.0',
+        'picassoVersionLib'         : '2.5.2'
 ]
