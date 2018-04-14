@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso
 import test.platzi.com.raian.com.org.simpleplatzi.R
 import test.platzi.com.raian.com.org.simpleplatzi.model.Item
 
-class RVCustomAdapter(val lstRes: List<Item>?, val context: Context) : RecyclerView.Adapter<RVCustomAdapter.ViewHolder>() {
+class RVCustomAdapter(var lstRes: List<Item>?, val context: Context) : RecyclerView.Adapter<RVCustomAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         val view : View = LayoutInflater.from(parent?.context).inflate(R.layout.product_card, parent, false)
@@ -19,7 +19,7 @@ class RVCustomAdapter(val lstRes: List<Item>?, val context: Context) : RecyclerV
     }
 
     override fun getItemCount(): Int {
-        return if(lstRes?.size!! > 0) lstRes.size else 0
+        return if(lstRes?.size!! > 0) lstRes!!.size else 0
     }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
@@ -29,7 +29,10 @@ class RVCustomAdapter(val lstRes: List<Item>?, val context: Context) : RecyclerV
                 .into(holder?.mImageViewProduct)
     }
 
+    //ViewHolder
+    //TODO: Move this to holder package
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+
         lateinit var mImageViewProduct : ImageView
         lateinit var mTextViewProductName : TextView
 
@@ -40,6 +43,11 @@ class RVCustomAdapter(val lstRes: List<Item>?, val context: Context) : RecyclerV
             }
 
         }
+    }
+
+    fun filterList(filteredProductByName: ArrayList<Item>) {
+        lstRes = filteredProductByName
+        notifyDataSetChanged()
     }
 
 }
