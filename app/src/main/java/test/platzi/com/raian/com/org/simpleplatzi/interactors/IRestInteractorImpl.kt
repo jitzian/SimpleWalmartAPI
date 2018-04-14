@@ -19,7 +19,9 @@ class IRestInteractorImpl : IRestInteractor{
 
         restService.getProductsUsingQueryFilter(query).enqueue(object : Callback<ResultQueryWalmartProduct>{
             override fun onResponse(call: Call<ResultQueryWalmartProduct>?, response: Response<ResultQueryWalmartProduct>?) {
-                println("$TAG --> $response")
+                var lstRes:ResultQueryWalmartProduct = response?.body()!!
+                println("$TAG ** --> ${response?.body()}")
+                println("$TAG ** --> ${lstRes.items}")
                 result = response?.body()!!
             }
 
